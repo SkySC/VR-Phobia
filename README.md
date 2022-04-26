@@ -1,2 +1,2 @@
 # VR-Phobia
-small Unity3D vr project to fight acrophobia
+Small Unity3D project to fight acrophobia in VR
