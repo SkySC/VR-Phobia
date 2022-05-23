@@ -9,7 +9,7 @@ public class VRMap {
     public Transform rigTarget;
     public Vector3 trackingPositionOffset;
     public Vector3 trackingRotationOffset;
-
+    // set position and rotation to VR target
     public void Map() {
         rigTarget.position = vrTarget.TransformPoint(trackingPositionOffset);
         rigTarget.rotation = vrTarget.rotation * Quaternion.Euler(trackingRotationOffset);
@@ -34,7 +34,7 @@ public class VRRig : MonoBehaviour
         headBodyOffset = transform.position - headConstraint.position;
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         // move body in the direction the head is pointing towards
         transform.position = headConstraint.position + headBodyOffset;
