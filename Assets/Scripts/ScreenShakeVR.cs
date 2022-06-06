@@ -10,14 +10,12 @@ public class ScreenShakeVR : MonoBehaviour
 
     Material material;
 
-    public float shakeMagnitude = 0.1f;
-    public float shakeFrequency = 20f;
+    [SerializeField] private float shakeMagnitude = 0.5f;
+    [SerializeField] private float shakeLength = 1f;
+    [SerializeField] private float shakeFrequency = 20f;
 
     private float shakeVal;
     float shakeCumulation;
-
-    [Tooltip("Shake the screen when the space key is pressed")]
-    public bool debug = false;
 
     public class ShakeEvent
     {
@@ -72,11 +70,10 @@ public class ScreenShakeVR : MonoBehaviour
     /// <param name="magnitude">Magnitude of the shaking. Should range from 0 - 1</param>
     /// <param name="length">Length of the shake event.</param>
     /// <param name="exponent">Falloff curve of the shaking</param>
-    public void Shake(float magnitude, float length, float exponent = 2)
+    public void Shake()
     {
-        activeShakes.Add(new ShakeEvent(magnitude, length, exponent));
+        activeShakes.Add(new ShakeEvent(shakeMagnitude, shakeLength, 2));
     }
-
 
     /// <summary>
     /// Trigger a global shake event
@@ -84,7 +81,7 @@ public class ScreenShakeVR : MonoBehaviour
     /// <param name="magnitude">Magnitude of the shaking. Should range from 0 - 1</param>
     /// <param name="length">Length of the shake event.</param>
     /// <param name="exponent">Falloff curve of the shaking</param>
-    public static void TriggerShake(float magnitude, float length, float exponent = 2)
+    public static void TriggerShake()
     {
         if(instance == null)
         {
@@ -92,17 +89,12 @@ public class ScreenShakeVR : MonoBehaviour
         }
         else
         {
-            instance.Shake(magnitude, length, exponent);
+            instance.Shake();
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && debug)
-        {
-            Shake(0.5f, 1.0f);
-        }
-
         shakeCumulation = 0;
         //iterate through all active shake events
         for (int i = activeShakes.Count - 1; i >= 0; i--)
