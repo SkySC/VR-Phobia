@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SwitchToLevelpickerScene : MonoBehaviour
 {
+    /*
     [SerializeField] private XRController leftHandController;
     [SerializeField] private UnityEvent OnTriggerPressed;
 
@@ -25,4 +26,5 @@ public class SwitchToLevelpickerScene : MonoBehaviour
             Debug.Log("trigger pressed");
         }
     }
+    */
 }

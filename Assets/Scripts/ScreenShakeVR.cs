@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+using Random = UnityEngine.Random;
+
 [ExecuteInEditMode]
 public class ScreenShakeVR : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class ScreenShakeVR : MonoBehaviour
     [SerializeField] private float shakeMagnitude = 0.5f;
     [SerializeField] private float shakeLength = 1f;
     [SerializeField] private float shakeFrequency = 20f;
+    [SerializeField] [Range(0, 2)] private float randomMagnitudeFactor = 2f;
+    [SerializeField] [Range(0, 2)] private float randomLengthFactor = 2f;
 
     private float shakeVal;
     float shakeCumulation;
@@ -72,7 +76,9 @@ public class ScreenShakeVR : MonoBehaviour
     /// <param name="exponent">Falloff curve of the shaking</param>
     public void Shake()
     {
-        activeShakes.Add(new ShakeEvent(shakeMagnitude, shakeLength, 2));
+        float shakeMagnitudeWithRandom = Random.Range(shakeMagnitude, shakeMagnitude + randomMagnitudeFactor);
+        float shakeLengthWithRandom = Random.Range(shakeLength, shakeLength + randomLengthFactor);
+        activeShakes.Add(new ShakeEvent(shakeMagnitudeWithRandom, shakeLengthWithRandom, 2));
     }
 
     /// <summary>
