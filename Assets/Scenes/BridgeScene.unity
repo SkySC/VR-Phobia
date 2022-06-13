@@ -2258,7 +2258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeMagnitude: 0.25
   shakeLength: 0.8
-  shakeFrequency: 18
+  shakeFrequency: 10
   randomMagnitudeFactor: 1
   randomLengthFactor: 1
 --- !u!1 &187797887
@@ -7701,6 +7701,7 @@ GameObject:
   - component: {fileID: 602179096}
   - component: {fileID: 602179097}
   - component: {fileID: 602179098}
+  - component: {fileID: 602179099}
   m_Layer: 0
   m_Name: world
   m_TagString: Untagged
@@ -7834,6 +7835,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c1757ff21d5ba84385cd7d6561ffb50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &602179099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602179095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d992d1a1aca98429b18b1f3f250ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &616284429
