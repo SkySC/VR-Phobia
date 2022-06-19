@@ -25,14 +25,14 @@ public class PlayWalkingSound : MonoBehaviour
             return;
         // lower the volume if only moving a tiny bit forward or sidewards
         bool smallSteps = false;
-        Debug.Log("delta x = " + Mathf.Abs(transform.position.x - oldPos.x));
-        Debug.Log("delta z = " + Mathf.Abs(transform.position.z - oldPos.z));
+        //Debug.Log("delta x = " + Mathf.Abs(transform.position.x - oldPos.x));
+        //Debug.Log("delta z = " + Mathf.Abs(transform.position.z - oldPos.z));
         if (Mathf.Abs(transform.position.x - oldPos.x) <= 0.015f && Mathf.Abs(transform.position.z - oldPos.z) <= 0.015f)
             smallSteps = true;
 
         oldPos = transform.position;
 
-        Debug.Log("changing position? " + transform.hasChanged);
+        //Debug.Log("changing position? " + transform.hasChanged);
         if (transform.hasChanged && walkingSound.isPlaying == false)
         {
             transform.hasChanged = false;

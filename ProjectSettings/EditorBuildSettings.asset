@@ -10,7 +10,13 @@ EditorBuildSettings:
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/LevelpickerScene.unity
-    guid: 1cd43af4078f5bc42b567996e693e017
+    guid: 6bd6e8c15da96504caf741fe6ac6b3fc
+  - enabled: 1
+    path: Assets/Scenes/SpiderScene.unity
+    guid: e757abf8353556b4aadce4803b4b64ca
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3d1016aba4c650042a68c502bfc0ddbd, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: cfe3afa65f18b6948967cc7be567fd06, type: 2}
